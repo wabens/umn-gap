@@ -17,10 +17,12 @@ Farmers are able to enter their farm information, add workers and manage worker 
 - Nodemon
 - Passport
 - Passport-local
+- PdfMake
 - Pg
 - React/Redux/Saga
 - Material-UI
 - Moment.js
+
 
 
 ## Getting Started
