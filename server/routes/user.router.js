@@ -29,7 +29,7 @@ router.post('/register', async (req, res) => {
     console.log('in registration POST')
     console.log('registrationCode is:', req.body.newUser.registrationCode);
 
-    if(registrationCode == 1086420) {
+    if(registrationCode == 1234) {
         try {
         
         console.log(registrationCode);
