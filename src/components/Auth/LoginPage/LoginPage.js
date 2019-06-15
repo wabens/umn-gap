@@ -44,10 +44,10 @@ class LoginPage extends Component {
     });
   }
 
-  closeIntro = () => {
+  moreInfo = () => {
     this.setState({
       ...this.state,
-      openDialog: false
+      openDialog: !this.state.openDialog
     })
   }
 
@@ -55,7 +55,6 @@ class LoginPage extends Component {
       const {classes} = this.props;
       return (
         <React.Fragment>
-    
         <Grid container spacing={24}
          container
          direction="column"
@@ -97,6 +96,10 @@ class LoginPage extends Component {
                   <Grid item xs={8} sm={6}>
                     <Button size="large" color="primary" onClick={() => {this.props.dispatch({type: 'SET_TO_REGISTER_MODE'})}}>Register</Button>
                   </Grid>
+
+                  <Grid item xs={8} sm={6} size="large" color="primary" onClick={this.moreInfo}>
+                    <Button size="large" color="primary" onClick={this.moreInfo}>Info</Button>
+                  </Grid>
                  
               </Grid>
           <Dialog
@@ -106,23 +109,22 @@ class LoginPage extends Component {
               <p>
                 This is the state of the application before transitioning from pro bono work for the University of Minnesota to 
                 paid work. As a result it is a beta version specifically for my portfolio. 
-                
-                Some notes:
               </p>
               <ul className='intro-list'>
+                <li>
+                  <a href="https://extension.umn.edu/growing-safe-food/good-agricultural-practices-basics" target="_blank">Whats a G.A.P?</a>
+                </li>
                 <li>
                   For best results use in mobile view.
                 </li>
                 <li>
-                  Register a farm with code 1234.
+                  Try registering a farm!
                 </li>
                 <li>
-                  Premade admin login
+                  Or jump in right away with:
                   <br/>Username: admin
                   <br/>Password: admin
-                </li>
-                <li>
-                  Premade worker login
+                  <br/>
                   <br/>Username: worker
                   <br/>Password: worker
                 </li>
@@ -132,9 +134,9 @@ class LoginPage extends Component {
                 fullWidth
                 variant='contained'
                 colr='primary'
-                onClick={this.closeIntro}
+                onClick={this.moreInfo}
               >
-                Ok!
+                Got it!
               </Button>
 
             </DialogContent>

@@ -12,7 +12,7 @@ import swal from 'sweetalert';
 class RegisterPage extends Component {
   state = {
     newUser:{
-        registrationCode: '',
+        registrationCode: 1234,
         person_first: '',
         person_last: '',
         username: '',
