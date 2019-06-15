@@ -6,11 +6,18 @@ import { withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import FormControl from '@material-ui/core/FormControl';
+import Dialog from '@material-ui/core/Dialog';
+import DialogContent from '@material-ui/core/DialogContent';
+
+
+
+
 
 class LoginPage extends Component {
   state = {
     username: '',
     password: '',
+    openDialog: true
   };
 
   //FUNCTION - prevents page from refreshing-- if username and password are true- dispatches login with payload of username and password otherwise throw error
@@ -37,6 +44,12 @@ class LoginPage extends Component {
     });
   }
 
+  closeIntro = () => {
+    this.setState({
+      ...this.state,
+      openDialog: false
+    })
+  }
 
   render() {
       const {classes} = this.props;
@@ -50,18 +63,7 @@ class LoginPage extends Component {
          alignItems="center"
        >
           <Grid item xs={12} sm={6}>
-          {/* <Typography variant="h4" gutterBottom align="center">
-        Good
-        </Typography>
-        <Typography variant="h4" gutterBottom align="center">
-        Agricultural
-        </Typography>
-        <Typography variant="h4" gutterBottom align="center">
-        Practice 
-        </Typography>
-        <Typography variant="h4" gutterBottom align="center">
-        Farmers
-        </Typography> */}
+
         <img src='/images/gap_logo.png' height='100%' width='100%'></img>
           </Grid>
           
@@ -97,7 +99,46 @@ class LoginPage extends Component {
                   </Grid>
                  
               </Grid>
+          <Dialog
+            open = {this.state.openDialog}
+          >
+            <DialogContent>
+              <p>
+                This is the state of the application before transitioning from pro bono work for the University of Minnesota to 
+                paid work. As a result it is a beta version specifically for my portfolio. 
+                
+                Some notes:
+              </p>
+              <ul className='intro-list'>
+                <li>
+                  For best results use in mobile view.
+                </li>
+                <li>
+                  Register a farm with code 1234.
+                </li>
+                <li>
+                  Premade admin login
+                  <br/>Username: admin
+                  <br/>Password: admin
+                </li>
+                <li>
+                  Premade worker login
+                  <br/>Username: worker
+                  <br/>Password: worker
+                </li>
+              </ul>
 
+              <Button 
+                fullWidth
+                variant='contained'
+                colr='primary'
+                onClick={this.closeIntro}
+              >
+                Ok!
+              </Button>
+
+            </DialogContent>
+          </Dialog>
           </React.Fragment>
     );
   }
@@ -111,8 +152,7 @@ const styles = theme => ({
   },
   textField: {
       marginLeft: theme.spacing.unit,
-     // marginRight: theme.spacing.unit,
-      //width: 200,
+
   },
   dense: {
       marginTop: 19,

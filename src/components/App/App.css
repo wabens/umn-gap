@@ -55,4 +55,8 @@ ul{
     padding-inline-start: 10px;
 }
 
+.intro-list{
+    list-style-type: circle;
+
+}
 
