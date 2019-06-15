@@ -5,6 +5,7 @@ GAP FARMERS is a streamlined and centralized way for small produce farmers to ke
 Farmers are able to enter their farm information, add workers and manage worker roles. Each farm has the ability to enter records about their harvest, usage of manure, water sources, employee training, equipment and facilities relating to GAP. Farmers can quickly access previous years information and view records in a clear way. Past years information will be importable to the current year.
 
 [Try it](https://serene-reaches-15081.herokuapp.com/#/home)
+
 [Try it with a mobile emulator](http://mobiletest.me/iphone_5_emulator/?u=https://serene-reaches-15081.herokuapp.com/#/home)
 
 ## Built With
